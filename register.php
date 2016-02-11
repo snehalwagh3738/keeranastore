@@ -1,8 +1,7 @@
 
 	  <?php 
 	 
-         include_once  '../keeranastore/include/header.php';
-         include_once '../keeranastore/config/db_config.php';
+         include_once  'include/header.php';
 	  
 	  if(isset($_POST['Submit']))
 			{

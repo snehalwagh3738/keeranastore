@@ -1,10 +1,15 @@
+<?php 
+session_start();
+
+include_once 'config/db_config.php';
+?>
 <html>
     <head>
-        <script src="../js/jquery-2.2.0.min (1).js" type="text/javascript"></script>
-        <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="<?php echo $config['BASEURL'];?>js/jquery-2.2.0.min (1).js" type="text/javascript"></script>
+        <link href="<?php echo $config['BASEURL'];?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         
         
-        <script src="../bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?php echo $config['BASEURL'];?>bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
         
         
     </head>
@@ -22,7 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="index.php">Keeranastore</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,17 +55,22 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <?php if(empty($_SESSION['user_name'])){?>
+        <li><a href="register.php">Register</a></li>
+        <li><a href="login.php">Login</a></li>
+        <?php }else{ ?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Profile Update</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="password_change.php">Password Chnage</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="logout.php">Logout</a></li>
           </ul>
         </li>
+        
+        <?php } ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
