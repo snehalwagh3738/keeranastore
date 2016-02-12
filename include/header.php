@@ -1,22 +1,17 @@
 <?php 
 session_start();
-
-include_once 'config/db_config.php';
+include_once('../config/db_config.php');
 ?>
 <html>
     <head>
         <script src="<?php echo $config['BASEURL'];?>js/jquery-2.2.0.min (1).js" type="text/javascript"></script>
         <link href="<?php echo $config['BASEURL'];?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
-        
         <script src="<?php echo $config['BASEURL'];?>bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
         
         
     </head>
 
 <body>
-
-    
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
